@@ -12,17 +12,14 @@ def handle_events():
     for event in events:
         if event.type == SDL_QUIT:
             running = False
-        if event.type == SDL_MOUSEBUTTONDOWN: #버튼 눌렀을 때
-            for i in range(0, 100 + 1, 2):
-                t = i / 100
-                nowX = (1 - t) * nowX + t * nowY
-                nowY = (1 - t) * x + t * y
+        if event.type  == SDL_MOUSEBUTTONDOWN:
+            nowX = x
+            nowY = y
 
         elif event.type == SDL_MOUSEMOTION: #마우스 모션이벤트 감지
             x, y = event.x, KPU_HEIGHT - 1 - event.y
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
-
 
 open_canvas(KPU_WIDTH, KPU_HEIGHT)
 kpu_ground = load_image('KPU_GROUND.png')
@@ -38,7 +35,10 @@ while running:
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
     pointer.draw(x, y)
-    character.clip_draw(frame * 100, 0, 100, 100, nowX, nowY)
+    if(nowX <= x):
+        character.clip_draw(frame * 100, 0, 100, 100, nowX, nowY)
+    elif(nowX >= x):
+        character.clip_draw(frame * 100, 100, 100, 100, nowX, nowY)
     update_canvas()
     frame = (frame + 1) % 8
 
