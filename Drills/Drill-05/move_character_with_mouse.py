@@ -31,6 +31,7 @@ character = load_image('animation_sheet.png')
 running = True
 x, y = KPU_WIDTH // 2, KPU_HEIGHT // 2
 frame = 0
+nowX, nowY = 600, 600
 hide_cursor() # 마우스 커서 숨김. show_cursor() 는 커서 아이콘 출력
 
 while running:
