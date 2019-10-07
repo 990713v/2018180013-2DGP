@@ -2,6 +2,15 @@ from pico2d import *
 
 KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
+def draw_line(x, y):
+    for i in range(0, 100 + 1, 2):
+        t = i / 100
+        nowX = (1 - t) * x[0] + t * y[0]
+        nowY = (1 - t) * x[1] + t * y[1]
+
+    while(nowX == x and nowY == y):
+        character.clip_draw(frame * 100, 0, 100, 100, nowX, nowY)
+
 def handle_events():
     global running
     global x, y
@@ -13,11 +22,7 @@ def handle_events():
         if event.type == SDL_QUIT:
             running = False
         if event.type == SDL_MOUSEBUTTONDOWN: #버튼 눌렀을 때
-            for i in range(0, 100+1, 2):
-                t = i/100
-                nowX = (1-t)*x+t*y
-                nowY = (1-t)*x+t*y
-            nowX, nowY = x, y
+            draw_line(x, y)
         elif event.type == SDL_MOUSEMOTION: #마우스 모션이벤트 감지
             x, y = event.x, KPU_HEIGHT - 1 - event.y
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
