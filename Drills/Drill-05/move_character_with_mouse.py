@@ -5,6 +5,7 @@ KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 def handle_events():
     global running
     global x, y
+    global x2, y2
     global nowX, nowY  # 캐릭터 좌표
 
     events = get_events()
@@ -15,12 +16,14 @@ def handle_events():
         if event.type  == SDL_MOUSEBUTTONDOWN:
             for i in range(0, 100 + 1, 2):
                 t = i / 100
-                nowX = (1 - t) * nowX + t * nowY
+                nowX = (1 - t) * x2 + t * y2
                 nowY = (1 - t) * x + t * y
                 #nowX, nowY = event.x, KPU_HEIGHT - 1 - event.y
 
         elif event.type == SDL_MOUSEMOTION: #마우스 모션이벤트 감지
+            x2, y2 = x, y
             x, y = event.x, KPU_HEIGHT - 1 - event.y
+
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
 
@@ -33,7 +36,7 @@ running = True
 x, y = KPU_WIDTH // 2, KPU_HEIGHT // 2
 frame = 0
 hide_cursor() # 마우스 커서 숨김. show_cursor() 는 커서 아이콘 출력
-nowX, nowY = x, y
+nowX, nowY = 600, 600
 while running:
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
