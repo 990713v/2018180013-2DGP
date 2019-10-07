@@ -13,6 +13,10 @@ def handle_events():
         if event.type == SDL_QUIT:
             running = False
         if event.type == SDL_MOUSEBUTTONDOWN: #버튼 눌렀을 때
+            for i in range(0, 100+1, 2):
+                t = i/100
+                nowX = (1-t)*x+t*y
+                nowY = (1-t)*x+t*y
             nowX, nowY = x, y
         elif event.type == SDL_MOUSEMOTION: #마우스 모션이벤트 감지
             x, y = event.x, KPU_HEIGHT - 1 - event.y
