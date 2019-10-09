@@ -3,22 +3,22 @@ import random
 
 KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
+p1 = ((random.randint(-400, 400 + 1), (random.randint(-400, 400 + 1))))
+p2 = ((random.randint(-400, 400 + 1), (random.randint(-400, 400 + 1))))
+p3 = ((random.randint(-400, 400 + 1), (random.randint(-400, 400 + 1))))
+p4 = ((random.randint(-400, 400 + 1), (random.randint(-400, 400 + 1))))
+p5 = ((random.randint(-400, 400 + 1), (random.randint(-400, 400 + 1))))
+p6 = ((random.randint(-400, 400 + 1), (random.randint(-400, 400 + 1))))
+p7 = ((random.randint(-400, 400 + 1), (random.randint(-400, 400 + 1))))
+p8 = ((random.randint(-400, 400 + 1), (random.randint(-400, 400 + 1))))
+p9 = ((random.randint(-400, 400 + 1), (random.randint(-400, 400 + 1))))
+p10 = ((random.randint(-400, 400 + 1), (random.randint(-400, 400 + 1))))
+
 def handle_events():
     global running
     global x, y
     global end_x, end_y
     global nowX, nowY
-
-    p1 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
-    p2 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
-    p3 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
-    p4 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
-    p5 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
-    p6 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
-    p7 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
-    p8 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
-    p9 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
-    p10 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
 
     events = get_events()
 
@@ -118,10 +118,6 @@ frame = 0
 show_cursor()
 
 while running:
-    move_x = (end_x - nowX) / 20
-    move_y = (end_y - nowY) / 20
-    nowX += move_x
-    nowY += move_y
 
     handle_events()
 

@@ -112,9 +112,6 @@ def draw_curve_4_points(p1, p2, p3, p4):
         draw_point((x, y))
     draw_point(p1)
 
-
 prepare_turtle_canvas()
-
 draw_curve_4_points((-300, 200), (400, 350), (300, -300), (-200, -200))
-
 turtle.done()
