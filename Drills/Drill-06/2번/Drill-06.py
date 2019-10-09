@@ -3,7 +3,7 @@ import random
 
 KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
-def draw_curve_10_points(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
+def curve(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
     # draw p1-p2
     for i in range(0, 100, 2):
         t = i / 100
@@ -75,18 +75,28 @@ kpu_ground = load_image('KPU_GROUND.png')
 running = True
 x, y = KPU_WIDTH // 2, KPU_HEIGHT // 2
 nowX, nowY = KPU_WIDTH // 2, KPU_HEIGHT // 2
+end_x = nowX
+end_y = nowY
 
 frame = 0
 show_cursor()
 
-
 # (random.randint(-400, 400), random.randint(-400, 400)) 랜덤좌표
 
 while running:
+    move_x = (end_x - nowX) / 20
+    move_y = (end_y - nowY) / 20
+    nowX += move_x
+    nowY += move_y
+
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
     character.clip_draw(frame * 100, 100, 100, 100, nowX, nowY)
-    update_canvas()
+    curve((random.randint(-400, 400), random.randint(-400, 400)), random.randint(-400, 400), random.randint(-400, 400),
+          random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400),
+          random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400),
+          random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400),
+          random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400))
     frame = (frame + 1) % 8
 
     delay(0.02)
