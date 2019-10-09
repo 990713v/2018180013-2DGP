@@ -79,10 +79,12 @@ nowX, nowY = KPU_WIDTH // 2, KPU_HEIGHT // 2
 frame = 0
 show_cursor()
 
+
+# (random.randint(-400, 400), random.randint(-400, 400)) 랜덤좌표
+
 while running:
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
-    #hand.draw(x, y)
     character.clip_draw(frame * 100, 100, 100, 100, nowX, nowY)
     update_canvas()
     frame = (frame + 1) % 8
