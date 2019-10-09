@@ -3,6 +3,35 @@ import random
 
 KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
+def handle_events():
+    global running
+    global x, y
+    global end_x, end_y
+    global nowX, nowY
+
+    p1 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
+    p2 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
+    p3 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
+    p4 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
+    p5 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
+    p6 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
+    p7 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
+    p8 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
+    p9 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
+    p10 = ((random.randint(-400, 400+1), (random.randint(-400, 400+1))))
+
+
+    events = get_events()
+
+    for event in events:
+        if event.type == SDL_MOUSEBUTTONDOWN:
+            for i in range(0, 100, 2):
+                t = i / 100
+                nowX = ((-t ** 3 + 2 * t ** 2 - t) * p10[0] + (3 * t ** 3 - 5 * t ** 2 + 2) * p1[0]
+                        + (-3 * t ** 3 + 4 * t ** 2 + t) * p2[0] + (t ** 3 - t ** 2) * p3[0]) / 2
+                nowY = ((-t ** 3 + 2 * t ** 2 - t) * p10[1] + (3 * t ** 3 - 5 * t ** 2 + 2) * p1[1]
+                        + (-3 * t ** 3 + 4 * t ** 2 + t) * p2[1] + (t ** 3 - t ** 2) * p3[1]) / 2
+
 def curve(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10):
     global nowX, nowY
     # draw p1-p2
@@ -81,13 +110,12 @@ end_y = nowY
 frame = 0
 show_cursor()
 
-# (random.randint(-400, 400), random.randint(-400, 400)) 랜덤좌표
-
 while running:
     move_x = (end_x - nowX) / 20
     move_y = (end_y - nowY) / 20
     nowX += move_x
     nowY += move_y
+    curve(((random.randint(-400, 400+1)), (random.randint(-400, 400+1))))
 
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
