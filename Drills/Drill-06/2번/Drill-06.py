@@ -92,11 +92,11 @@ while running:
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
     character.clip_draw(frame * 100, 100, 100, 100, nowX, nowY)
-    curve((random.randint(-400, 400), random.randint(-400, 400)), random.randint(-400, 400), random.randint(-400, 400),
-          random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400),
-          random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400),
-          random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400),
-          random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400), random.randint(-400, 400))
+    curve((random.randint(-400, 400), random.randint(-400, 400)), (random.randint(-400, 400), random.randint(-400, 400)),
+          (random.randint(-400, 400), random.randint(-400, 400)), (random.randint(-400, 400), random.randint(-400, 400)),
+          (random.randint(-400, 400), random.randint(-400, 400)), (random.randint(-400, 400), random.randint(-400, 400)),
+          (random.randint(-400, 400), random.randint(-400, 400)), (random.randint(-400, 400), random.randint(-400, 400)),
+          (random.randint(-400, 400), random.randint(-400, 400)), (random.randint(-400, 400), random.randint(-400, 400)))
     frame = (frame + 1) % 8
 
     delay(0.02)
