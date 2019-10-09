@@ -5,7 +5,6 @@ import random
 def stop():
     turtle.bye()
 
-
 def prepare_turtle_canvas():
     turtle.setup(1024, 768)
     turtle.bgcolor(0.2, 0.2, 0.2)
