@@ -88,6 +88,5 @@ while running:
     frame = (frame + 1) % 8
 
     delay(0.02)
-    handle_events()
 
 close_canvas()
