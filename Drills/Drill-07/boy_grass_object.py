@@ -48,6 +48,9 @@ class Big_ball:
     def update(self):
         self.x -= self.speed
 
+    def draw(self):
+        self.image.draw(self.x, self.y)
+
 def handle_events():
     global running
     events = get_events()
