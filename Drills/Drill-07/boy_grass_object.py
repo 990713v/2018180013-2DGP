@@ -82,10 +82,10 @@ while running:
     for boy in team:
         boy.update()
 
-    for Big_ball in bigs
+    for Big_ball in bigs:
         Big_ball.update()
 
-    for Small_ball in smalls
+    for Small_ball in smalls:
         Small_ball.update()
 
 
