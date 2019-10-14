@@ -1,4 +1,5 @@
 from pico2d import *
+import random
 
 # Game object class here
 # 잔디 클래스
@@ -14,8 +15,9 @@ class Grass:
 
 class Boy:
     def __init__(self):
-        self.x, self.y = 0, 90
-        self.frame = 0 # animation 상태 나타내기 위한 속성
+        self.x, self.y = random.randint(100, 700), 90
+        self.frame = random.randint(0, 7)
+        #self.frame = 0 # animation 상태 나타내기 위한 속성
         self.image = load_image('run_animation.png')
 
     def update(self): # 행위
@@ -39,6 +41,8 @@ open_canvas()
 
 boy = Boy()
 grass = Grass()
+# List Comprehension ( 리스트를 빠르게 채우기 위한 방법 )
+team = [Boy() for i in range(11)]
 
 running = True
 
@@ -46,11 +50,15 @@ running = True
 while running:
     handle_events()
 
-    boy.update()
+    for boy in team:
+        boy.update()
+    #boy.update()
 
     clear_canvas()
     grass.draw()
-    boy.draw()
+    for boy in team:
+        boy.draw()
+    #boy.draw()
     update_canvas()
 
     delay(0.05)
