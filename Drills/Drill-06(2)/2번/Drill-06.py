@@ -29,7 +29,7 @@ def handle_events():
         if event.type == SDL_MOUSEBUTTONDOWN:
             for i in range(0, 100, 2):
                 t = i / 100
-                end_x = ((-t ** 3 + 2 * t ** 2 - t) * point[1][0] + (3 * t ** 3 - 5 * t ** 2 + 2) * point[1][0]
+                nowX = ((-t ** 3 + 2 * t ** 2 - t) * point[1][0] + (3 * t ** 3 - 5 * t ** 2 + 2) * point[1][0]
                          + (-3 * t ** 3 + 4 * t ** 2 + t) * point[2][0] + (t ** 3 - t ** 2) * point[3][0]) / 2
                 nowY = ((-t ** 3 + 2 * t ** 2 - t) * point[4][1] + (3 * t ** 3 - 5 * t ** 2 + 2) * point[1][1]
                          + (-3 * t ** 3 + 4 * t ** 2 + t) * point[2][1] + (t ** 3 - t ** 2) * point[3][1]) / 2
@@ -73,10 +73,6 @@ frame = 0
 show_cursor()
 
 while running:
-    move_x = (end_x - nowX) / 5
-    move_y = (end_y - nowY) / 5
-    nowX += move_x
-    nowY += move_y
 
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
