@@ -68,6 +68,11 @@ grass = Grass()
 # List Comprehension ( 리스트를 빠르게 채우기 위한 방법 )
 team = [Boy() for i in range(11)]
 
+#공
+cnt = random.randint(1, 20+1)
+bigs = [Big_ball() for i in range(cnt)]
+Smalls = [Small_ball() for i in range(20-cnt)]
+
 running = True
 
 # game main loop code
@@ -76,13 +81,13 @@ while running:
 
     for boy in team:
         boy.update()
-    #boy.update()
 
     clear_canvas()
     grass.draw()
+
     for boy in team:
         boy.draw()
-    #boy.draw()
+
     update_canvas()
 
     delay(0.05)
