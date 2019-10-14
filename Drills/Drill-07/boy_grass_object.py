@@ -37,7 +37,10 @@ class Small_ball:
         self.x -= self.speed
 
     def draw(self):
-        self.image.draw(self.x, self.y)
+        if(self.y>=60):
+            self.image.draw(self.x, self.y)
+        else:
+            self.image.draw(self.x, 60)
 
 class Big_ball:
     def __init__(self):
