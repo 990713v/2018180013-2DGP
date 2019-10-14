@@ -30,10 +30,11 @@ class Boy:
 class Small_ball:
     def __init__(self):
         self.x, self.y = random.randint(50, 750), 599
+        self.speed = random.randint(3, 15) # 속도 조절
         self.image = load_image('ball21x21.png')
 
     def update(self):
-        self.x -= random.randint(3, 15)
+        self.x -= self.speed
 
     def draw(self):
         self.image.draw(self.x, self.y)
@@ -41,7 +42,11 @@ class Small_ball:
 class Big_ball:
     def __init__(self):
         self.x, self.y = random.randint(50, 750), 599
+        self.speed = random.randint(3, 15)
         self.image = load_image('ball41x41.png')
+
+    def update(self):
+        self.x -= self.speed
 
 def handle_events():
     global running
