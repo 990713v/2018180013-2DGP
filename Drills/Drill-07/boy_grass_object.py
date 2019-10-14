@@ -52,7 +52,10 @@ class Big_ball:
         self.x -= self.speed
 
     def draw(self):
-        self.image.draw(self.x, self.y)
+        if(self.y >= 70):
+            self.image.draw(self.x, self.y)
+        else:
+            self.image.draw(self.x, 70)
 
 def handle_events():
     global running
