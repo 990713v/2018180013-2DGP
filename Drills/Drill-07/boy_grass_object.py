@@ -32,6 +32,12 @@ class small_ball:
         self.x, self.y = random.randint(50, 750), 599
         self.image = load_image('ball21x21.png')
 
+    def update(self):
+        self.x -= random.randint(3, 15)
+
+    def draw(self):
+        self.image.draw(self.x, self.y)
+
 def handle_events():
     global running
     events = get_events()
