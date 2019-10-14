@@ -79,6 +79,7 @@ running = True
 while running:
     handle_events()
 
+# update
     for boy in team:
         boy.update()
 
@@ -88,12 +89,18 @@ while running:
     for Small_ball in smalls:
         Small_ball.update()
 
-
     clear_canvas()
     grass.draw()
 
+# draw
     for boy in team:
         boy.draw()
+
+    for Big_ball in bigs:
+        Big_ball.draw()
+
+    for Small_ball in smalls:
+        Small_ball.draw()
 
     update_canvas()
 
