@@ -71,7 +71,7 @@ team = [Boy() for i in range(11)]
 #공
 cnt = random.randint(1, 20+1)
 bigs = [Big_ball() for i in range(cnt)]
-Smalls = [Small_ball() for i in range(20-cnt)]
+smalls = [Small_ball() for i in range(20-cnt)]
 
 running = True
 
@@ -81,6 +81,13 @@ while running:
 
     for boy in team:
         boy.update()
+
+    for Big_ball in bigs
+        Big_ball.update()
+
+    for Small_ball in smalls
+        Small_ball.update()
+
 
     clear_canvas()
     grass.draw()
