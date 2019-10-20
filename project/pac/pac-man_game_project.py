@@ -17,6 +17,7 @@ import random
 from pico2d import *
 open_canvas()
 
+
 # 리소스
 game_map = load_image('coin_map.png')
 player = load_image('pacman.png')
