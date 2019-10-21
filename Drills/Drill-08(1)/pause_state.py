@@ -19,7 +19,7 @@ def enter():
 
 def exit():
     global pause
-    del pause
+    del(pause)
 
 def update():
     global pause
