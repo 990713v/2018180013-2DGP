@@ -41,10 +41,12 @@ def handle_events():
     pass
 
 
-def pause(): pass
+def pause():
+    pass
         
 
-def resume(): pass
+def resume():
+    pass
 
 
 
