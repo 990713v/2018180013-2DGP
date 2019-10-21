@@ -6,7 +6,7 @@ from pico2d import *
 
 import game_framework
 import title_state
-import pause_state
+import pause_state #정지상태 모듈 가져옴
 
 name = "MainState"
 
