@@ -9,7 +9,6 @@ class Pause:
 
     def update(self):
         delay(0.1)
-        pass
 
     def draw(self):
         self.image.draw(400, 300, 500, 500)
