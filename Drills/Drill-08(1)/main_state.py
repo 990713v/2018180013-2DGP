@@ -65,7 +65,6 @@ def handle_events():
             game_framework.quit()
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.change_state(title_state)
-
             # p 키를 눌렀을 때 게임상태를 pause로 변화
         elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
             game_framework.push_state(pause_state)
@@ -81,4 +80,11 @@ def draw():
     grass.draw()
     boy.draw()
     update_canvas()
+    pass
+
+def pause():
+    pass
+
+
+def resume():
     pass

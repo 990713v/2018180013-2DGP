@@ -9,25 +9,22 @@ class Pause:
 
     def update(self):
         delay(0.1)
+        pass
 
     def draw(self):
         self.image.draw(400, 300, 500, 500)
-
 
 def enter():
     global pause
     pause = Pause()
 
-
 def exit():
     global pause
-    del(pause)
-
+    del pause
 
 def update():
     global pause
     pause.update()
-
 
 def draw():
     global pause
@@ -43,3 +40,10 @@ def handle_events():
         #pause 상태에서 p를 한번 더 누르면 이전상태로 복귀
         if event.type == SDL_KEYDOWN and event.key == SDLK_p:
             game_framework.pop_state()
+
+def pause():
+    pass
+
+
+def resume():
+    pass
