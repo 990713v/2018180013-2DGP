@@ -6,10 +6,8 @@ class Pause:
     # Pause 클래스 초기화
     def __init__(self):
         self.image = load_image('pause.png')
-        self.time = 0 
 
     def update(self):
-        self.time = 1 - self.time
         delay(0.1)
         pass
 
