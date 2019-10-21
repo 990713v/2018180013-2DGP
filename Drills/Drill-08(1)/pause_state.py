@@ -8,7 +8,6 @@ class Pause:
         self.image = load_image('pause.png')
 
     def update(self):
-        delay(0.1)
         pass
 
     def draw(self):
