@@ -9,7 +9,7 @@ class Pause_Advanced:
         self.time = 0
 
     def update(self):
-        self.time = 1 - self.time
+        #self.time = 1 - self.time
         delay(0.1)
         pass
 

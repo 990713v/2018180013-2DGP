@@ -55,7 +55,7 @@ def handle_events():
                 elif event.key == SDLK_DOWN:
                    nowY += 1
 
-
+    
 
 # 적AI 함수 테스트 - 방향에 따른 이미지
 # 프레임 당 크기 29*16
@@ -79,7 +79,6 @@ def emy_R():
     elif(random.randrange(0, 3) == 3):
         emy_R.clip_draw(frame * 29, 16, 29, 16, emy_RX, emy_RY)
         emy_RY += 3
-
 
 
 while 1:
@@ -110,7 +109,6 @@ while 1:
         delay(0.1)
 
 
-        
-            
+     
 
 close_canvas()
