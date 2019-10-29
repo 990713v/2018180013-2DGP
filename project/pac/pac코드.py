@@ -40,31 +40,6 @@ def handle_events():
                    nowY += 1
 
     
-
-# 적AI 함수 테스트 - 방향에 따른 이미지
-# 프레임 당 크기 29*16
-def emy_R():
-    global emy_RX
-    global emy_RY
-
-    emy_R = load_image('red.png')
-    #emy_R.clip_draw(frame * 29, 0, 29, 16, emy_RX, emy_RY)
-    if(random.randrange(0, 3) == 0):
-        emy_R.clip_draw(frame * 29, 48, 29, 16, emy_RX, emy_RY)
-        emy_RX +=3
-        
-    elif(random.randrange(0, 3) == 1):
-        emy_R.clip_draw(frame * 29, 32, 29, 16, emy_RX, emy_RY) 
-        
-    elif(random.randrange(0, 3) == 2):
-        emy_R.clip_draw(frame * 29, 0, 29, 16, emy_RX, emy_RY)
-        emy_RY -= 3
-            
-    elif(random.randrange(0, 3) == 3):
-        emy_R.clip_draw(frame * 29, 16, 29, 16, emy_RX, emy_RY)
-        emy_RY += 3
-
-
 while 1:
         #clear_canvas()
         game_map.draw(400, 300)  # 맵 띄우기
@@ -91,6 +66,33 @@ while 1:
         x += nowX * 5
         y += nowY * 5
         delay(0.1)
+
+
+
+# 적AI 함수 테스트 - 방향에 따른 이미지
+# 프레임 당 크기 29*16
+def emy_R():
+    global emy_RX
+    global emy_RY
+
+    emy_R = load_image('red.png')
+    #emy_R.clip_draw(frame * 29, 0, 29, 16, emy_RX, emy_RY)
+    if(random.randrange(0, 3) == 0):
+        emy_R.clip_draw(frame * 29, 48, 29, 16, emy_RX, emy_RY)
+        emy_RX +=3
+        
+    elif(random.randrange(0, 3) == 1):
+        emy_R.clip_draw(frame * 29, 32, 29, 16, emy_RX, emy_RY) 
+        
+    elif(random.randrange(0, 3) == 2):
+        emy_R.clip_draw(frame * 29, 0, 29, 16, emy_RX, emy_RY)
+        emy_RY -= 3
+            
+    elif(random.randrange(0, 3) == 3):
+        emy_R.clip_draw(frame * 29, 16, 29, 16, emy_RX, emy_RY)
+        emy_RY += 3
+
+
 
 
      
