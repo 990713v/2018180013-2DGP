@@ -1,21 +1,5 @@
-import random
-from pico2d import *
-open_canvas()
-
-
-# 리소스
-game_map = load_image('coin_map.png')
-player = load_image('pacman.png')
-player_die = load_image('pac_die.png')
 
 # 시작 좌표
-x = 400
-y = 240
-
-emy_RX = 401
-emy_RY = 320
-
-frame = 5
 
 nowX = 0
 nowY = 0
@@ -82,7 +66,7 @@ def emy_R():
 
 
 while 1:
-        clear_canvas()
+        #clear_canvas()
         game_map.draw(400, 300)  # 맵 띄우기
         emy_R() # 적AI 함수
 
@@ -95,7 +79,7 @@ while 1:
             player.clip_draw(frame * 29, 48, 29, 16, x, y)
         elif locate == 4: #아래쪽
             player.clip_draw(frame * 29, 32, 29, 16, x, y)
-        update_canvas()
+        #update_canvas()
 
         # 범위 체크
         if x < 290:
@@ -111,4 +95,4 @@ while 1:
 
      
 
-close_canvas()
+#close_canvas()
