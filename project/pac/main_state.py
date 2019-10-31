@@ -18,6 +18,7 @@ class Game_map:
         self.image2 = load_image('black.png')
 
     def draw(self):
+        
         self.image2.draw(162, 174)
         self.image.draw(162, 174)
 
