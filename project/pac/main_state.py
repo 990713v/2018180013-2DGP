@@ -27,7 +27,7 @@ class Game_map:
 
 class Emy_R:
     def __init__(self):
-        self.x, self.y = 162, 160
+        self.x, self.y = 162, 180
         self.frame = 4
         self.image = load_image('red.png')
 
