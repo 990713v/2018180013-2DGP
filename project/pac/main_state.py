@@ -10,6 +10,7 @@ import title_state
 name = "MainState"
 
 player = None
+emy_R = None
 game_map = None
 
 class Game_map:
@@ -21,6 +22,23 @@ class Game_map:
         
         self.image2.draw(162, 174)
         self.image.draw(162, 174)
+
+
+
+class Emy_R:
+    def __init__(self):
+        self.x, self.y = 162, 160
+        self.frame = 4
+        self.image = load_image('red.png')
+
+    def update(self):
+        self.frame = (self.frame + 1) % 4
+
+
+    def draw(self):
+        self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
+
+
 
 nowX, nowY = 0, 0
 
@@ -84,15 +102,21 @@ class Player:
 
 def enter():
     global player, game_map
+    global emy_R
+    
     player = Player()
     game_map = Game_map()
+    emy_R = Emy_R()
     pass
 
 
 def exit():
     global player, game_map
+    global emy_R
+    
     del(player)
     del(game_map)
+    del(emy_R)
     pass
 
 
@@ -104,6 +128,7 @@ def handle_events():
 
 def update():
     player.update()
+    emy_R.update()
     pass
 
 
@@ -111,5 +136,6 @@ def draw():
     clear_canvas()
     game_map.draw()
     player.draw()
+    emy_R.draw()
     update_canvas()
     pass
