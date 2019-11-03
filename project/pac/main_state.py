@@ -9,10 +9,13 @@ import title_state
 
 name = "MainState"
 
+game_map = None
 player = None
+
+# < 적 오브젝트 >
 emy_R = None
 emy_B = None
-game_map = None
+emy_P = None
 
 class Game_map:
     def __init__(self):
@@ -25,7 +28,7 @@ class Game_map:
         self.image.draw(162, 174)
 
 
-
+# < 적 오브젝트>
 class Emy_R:
     def __init__(self):
         self.x, self.y = 162, 180
@@ -52,6 +55,21 @@ class Emy_B:
 
     def draw(self):
         self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
+
+
+class Emy_P:
+    def __init__(self):
+        self.x, self.y = 210, 180
+        self.frame = 4
+        self.image = load_image('pink.png')
+
+    def update(self):
+        self.frame = (self.frame + 1) % 4
+
+
+    def draw(self):
+        self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
+
 
 
 nowX, nowY = 0, 0
@@ -116,23 +134,27 @@ class Player:
 
 def enter():
     global player, game_map
-    global emy_R, emy_B
+    global emy_R, emy_B, emy_P
     
     player = Player()
     game_map = Game_map()
+    
     emy_R = Emy_R()
     emy_B = Emy_B()
+    emy_P = Emy_P()
     pass
 
 
 def exit():
     global player, game_map
-    global emy_R, emy_B
+    global emy_R, emy_B, emy_P
     
     del(player)
     del(game_map)
+    
     del(emy_R)
     del(emy_B)
+    del(emy_P)
     pass
 
 
@@ -144,8 +166,10 @@ def handle_events():
 
 def update():
     player.update()
+    
     emy_R.update()
     emy_B.update()
+    emy_P.update()
     pass
 
 
@@ -153,7 +177,10 @@ def draw():
     clear_canvas()
     game_map.draw()
     player.draw()
+    
     emy_R.draw()
     emy_B.draw()
+    emy_P.draw()
+    
     update_canvas()
     pass
