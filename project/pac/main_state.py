@@ -7,6 +7,8 @@ from pico2d import *
 import game_framework
 import title_state
 
+os.chdir('resourse')
+
 name = "MainState"
 
 game_map = None
