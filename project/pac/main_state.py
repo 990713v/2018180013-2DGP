@@ -15,9 +15,10 @@ game_map = None
 player = None
 
 # < 적 오브젝트 >
-emy_R = None
-emy_B = None
-emy_P = None
+emy_Red = None
+emy_Blue = None
+emy_Pink = None
+emy_Orange = None
 
 class Game_map:
     def __init__(self):
@@ -31,7 +32,7 @@ class Game_map:
 
 
 # < 적 오브젝트>
-class Emy_R:
+class Emy_Red:
     def __init__(self):
         self.x, self.y = 162, 180
         self.frame = 4
@@ -45,7 +46,7 @@ class Emy_R:
         self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
 
 
-class Emy_B:
+class Emy_Blue:
     def __init__(self):
         self.x, self.y = 191, 180
         self.frame = 4
@@ -59,7 +60,7 @@ class Emy_B:
         self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
 
 
-class Emy_P:
+class Emy_Pink:
     def __init__(self):
         self.x, self.y = 210, 180
         self.frame = 4
@@ -71,6 +72,20 @@ class Emy_P:
 
     def draw(self):
         self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
+
+class Emy_Orange:
+    def __init__(self):
+        self.x, self.y = 210, 180
+        self.frame = 4
+        self.image = load_image('orange.png')
+
+    def update(self):
+        self.frame = (self.frame + 1) % 4
+
+
+    def draw(self):
+        self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
+
 
 
 
@@ -136,27 +151,29 @@ class Player:
 
 def enter():
     global player, game_map
-    global emy_R, emy_B, emy_P
+    global emy_Red, emy_Blue, emy_Pink, emy_Orange
     
     player = Player()
     game_map = Game_map()
     
-    emy_R = Emy_R()
-    emy_B = Emy_B()
-    emy_P = Emy_P()
+    emy_Red = Emy_Red()
+    emy_Blue = Emy_Blue()
+    emy_Pink = Emy_Pink()
+    emy_Orange = Emy_Orange()
     pass
 
 
 def exit():
     global player, game_map
-    global emy_R, emy_B, emy_P
+    global emy_Red, emy_Blue, emy_Pink, emy_Orange
     
     del(player)
     del(game_map)
     
-    del(emy_R)
-    del(emy_B)
-    del(emy_P)
+    del(emy_Red)
+    del(emy_Blue)
+    del(emy_Pink)
+    del(emy_Orange)
     pass
 
 
@@ -169,9 +186,10 @@ def handle_events():
 def update():
     player.update()
     
-    emy_R.update()
-    emy_B.update()
-    emy_P.update()
+    emy_Red.update()
+    emy_Blue.update()
+    emy_Pink.update()
+    emy_Orange.update()
     pass
 
 
@@ -180,9 +198,10 @@ def draw():
     game_map.draw()
     player.draw()
     
-    emy_R.draw()
-    emy_B.draw()
-    emy_P.draw()
+    emy_Red.draw()
+    emy_Blue.draw()
+    emy_Pink.draw()
+    emy_Orange.draw()
     
     update_canvas()
     pass
