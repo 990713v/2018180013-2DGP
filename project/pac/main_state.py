@@ -27,16 +27,6 @@ emy_Blue = None
 emy_Pink = None
 emy_Orange = None
 
-class Game_map:
-    def __init__(self):
-        self.image = load_image('coin_map.png')
-        self.image2 = load_image('black.png')
-
-    def draw(self):
-        
-        self.image2.draw(162, 174)
-        self.image.draw(162, 174)
-
 
 def enter():
     global player #, game_map

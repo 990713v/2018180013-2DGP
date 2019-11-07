@@ -1,4 +1,5 @@
-# < 적 오브젝트>
+from pico2d import *
+
 class Emy_Red:
     def __init__(self):
         self.x, self.y = 162, 180

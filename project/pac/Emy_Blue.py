@@ -1,3 +1,5 @@
+from pico2d import *
+
 class Emy_Blue:
     def __init__(self):
         self.x, self.y = 191, 180
