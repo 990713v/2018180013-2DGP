@@ -1,3 +1,4 @@
+from pico2d import *
 import game_world
 
 nowX, nowY = 0, 0

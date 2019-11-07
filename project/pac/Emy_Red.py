@@ -1,4 +1,5 @@
 from pico2d import *
+import game_world
 
 class Emy_Red:
     def __init__(self):
