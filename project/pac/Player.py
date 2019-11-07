@@ -12,6 +12,8 @@ class Player:
 
     def update(self):
         self.frame = (self.frame + 1) % 4
+        self.x += nowX * 5
+        self.y += nowY * 5
         delay(0.1)
 
     def handle_events(self, event):
@@ -22,26 +24,36 @@ class Player:
             if event.type == SDL_KEYDOWN:
                 if event.key == SDLK_RIGHT:
                     nowX += 1
-                    nowY = 0
+                    #nowY = 0
                     self.locate = 1
 
                 elif event.key == SDLK_LEFT:
                     nowX -= 1
-                    nowY = 0
+                    #nowY = 0
                     self.locate = 2
 
                 elif event.key == SDLK_UP:
                     nowY += 1
-                    nowX = 0
+                    #nowX = 0
                     self.locate = 3
 
                 elif event.key == SDLK_DOWN:
                     nowY -= 1
-                    nowX = 0
+                    #nowX = 0
                     self.locate = 4
 
-        self.x += nowX * 5
-        self.y += nowY * 5
+            elif event.type == SDL_KEYUP:
+                if event.key == SDLK_RIGHT:
+                    nowX -= 1
+                elif event.key == SDLK_LEFT:
+                    nowX += 1
+                elif event.key == SDLK_UP:
+                    nowY -= 1
+                elif event.key == SDLK_DOWN:
+                    nowY += 1
+
+        #self.x += nowX * 5
+        #self.y += nowY * 5
 
     def draw(self):
         if self.locate <= 1: # 오른쪽
