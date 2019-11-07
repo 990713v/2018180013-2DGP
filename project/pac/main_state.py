@@ -7,12 +7,19 @@ import game_framework
 import title_state
 
 from player import Player
+from game_map import Game_map
+
+# 적
+from emy_Red import Emy_Red
+from emy_Blue import Emy_Blue
+from emy_Pink import Emy_Pink
+from emy_Orange import Emy_Orange
 
 name = "MainState"
-os.chdir('resourse')
+os.chdir('resourse') # 'resourse' 폴더에 있는 png 파일 가져옴
 
-game_map = None
 player = None
+#game_map = None
 
 # < 적 오브젝트 >
 emy_Red = None
@@ -31,65 +38,8 @@ class Game_map:
         self.image.draw(162, 174)
 
 
-# < 적 오브젝트>
-class Emy_Red:
-    def __init__(self):
-        self.x, self.y = 162, 180
-        self.frame = 4
-        self.image = load_image('red.png')
-
-    def update(self):
-        self.frame = (self.frame + 1) % 4
-
-
-    def draw(self):
-        self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
-
-
-class Emy_Blue:
-    def __init__(self):
-        self.x, self.y = 191, 180
-        self.frame = 4
-        self.image = load_image('blue.png')
-
-    def update(self):
-        self.frame = (self.frame + 1) % 4
-
-
-    def draw(self):
-        self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
-
-
-class Emy_Pink:
-    def __init__(self):
-        self.x, self.y = 210, 180
-        self.frame = 4
-        self.image = load_image('pink.png')
-
-    def update(self):
-        self.frame = (self.frame + 1) % 4
-
-
-    def draw(self):
-        self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
-
-class Emy_Orange:
-    def __init__(self):
-        self.x, self.y = 210, 180
-        self.frame = 4
-        self.image = load_image('orange.png')
-
-    def update(self):
-        self.frame = (self.frame + 1) % 4
-
-
-    def draw(self):
-        self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
-
-
-
 def enter():
-    global player, game_map
+    global player #, game_map
     global emy_Red, emy_Blue, emy_Pink, emy_Orange
     
     player = Player()
@@ -99,6 +49,14 @@ def enter():
     emy_Blue = Emy_Blue()
     emy_Pink = Emy_Pink()
     emy_Orange = Emy_Orange()
+
+    game_world.add_object(game_map, 0)
+    game_world.add_object(player, 1)
+
+    game_world.add_object(emy_Red, 2)
+    game_world.add_object(emy_Blue, 3)
+    game_world.add_object(emy_Pink, 4)
+    game_world.add_object(emy_Orange, 5)
     pass
 
 
