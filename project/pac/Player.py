@@ -3,6 +3,20 @@ import game_world
 
 nowX, nowY = 0, 0
 
+#적에게 닿았을때
+class SleepState:
+    @staticmethod
+    def enter(player, event):
+        player.frame = 0
+
+    @staticmethod
+    def do(player):
+        player.frame = (player.frame+1)%4
+
+    @staticmethod:
+        def draw(player):
+            player.image.clip_draw(player.frame*29
+
 class Player:
     def __init__(self):
         self.x, self.y = 162, 110
