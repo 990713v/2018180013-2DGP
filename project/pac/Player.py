@@ -11,11 +11,11 @@ class SleepState:
 
     @staticmethod
     def do(player):
-        player.frame = (player.frame+1)%4
+        player.frame = (player.frame+1)%14
 
     @staticmethod:
         def draw(player):
-            player.image.clip_draw(player.frame*29
+            player.image.clip_draw(player.frame*17, 0, 17,16, self.x, self.y)
 
 class Player:
     def __init__(self):
