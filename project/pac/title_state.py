@@ -34,8 +34,8 @@ def handle_events():
 
 def draw():
     clear_canvas()
-    background.draw(162, 174)
-    image.draw(162, 174)
+    background.draw(324, 348)
+    image.draw(324, 348)
     update_canvas()
 
 

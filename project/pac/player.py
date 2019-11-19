@@ -5,15 +5,15 @@ nowX, nowY = 0, 0
 
 class Player:
     def __init__(self):
-        self.x, self.y = 162, 110
+        self.x, self.y = 324, 220
         self.frame = 4
         self.locate = 0
         self.image = load_image('pacman.png')
 
     def update(self):
         self.frame = (self.frame + 1) % 4
-        self.x += nowX * 5
-        self.y += nowY * 5
+        self.x += nowX * 7
+        self.y += nowY * 7
         delay(0.1)
 
     def handle_events(self, event):
@@ -57,13 +57,13 @@ class Player:
 
     def draw(self):
         if self.locate <= 1: # 오른쪽
-            self.image.clip_draw(self.frame * 29, 0, 29, 16, self.x, self.y)
+            self.image.clip_draw(self.frame * 58, 0, 58, 32, self.x, self.y)
         elif self.locate == 2: # 왼쪽
-            self.image.clip_draw(self.frame * 29, 16, 29, 16, self.x, self.y)
+            self.image.clip_draw(self.frame * 58, 32, 58, 32, self.x, self.y)
         elif self.locate == 3: # 위쪽
-            self.image.clip_draw(self.frame * 29, 48, 29, 16, self.x, self.y)
+            self.image.clip_draw(self.frame * 58, 96, 58, 32, self.x, self.y)
         elif self.locate == 4: # 아래쪽
-            self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
+            self.image.clip_draw(self.frame * 58, 64, 58, 32, self.x, self.y)
 
         # 범위체크 ( 값 수정해줄것)
         #if self.x < 190:

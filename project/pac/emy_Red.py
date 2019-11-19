@@ -8,8 +8,8 @@ class Emy_Red:
         self.image = load_image('red.png')
 
     def update(self):
-        self.frame = (self.frame + 1) % 4
+        self.frame = (self.frame + 1) % 2
 
 
     def draw(self):
-        self.image.clip_draw(self.frame * 29, 32, 29, 16, self.x, self.y)
+        self.image.clip_draw(self.frame * 58, 64, 58, 32, self.x, self.y)

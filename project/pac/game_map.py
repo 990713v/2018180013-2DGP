@@ -11,5 +11,5 @@ class Game_map:
         pass
 
     def draw(self):        
-        self.image2.draw(162, 174)
-        self.image.draw(162, 174)
+        self.image2.draw(324, 348)
+        self.image.draw(324, 348)
