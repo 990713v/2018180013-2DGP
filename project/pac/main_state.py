@@ -44,10 +44,10 @@ def enter():
     game_world.add_object(game_map, 0)
     game_world.add_object(player, 1)
 
-    game_world.add_object(emy_Red, 2)
-    game_world.add_object(emy_Blue, 3)
-    game_world.add_object(emy_Pink, 4)
-    game_world.add_object(emy_Orange, 5)
+    game_world.add_object(emy_Red, 1)
+    game_world.add_object(emy_Blue, 1)
+    game_world.add_object(emy_Pink, 1)
+    game_world.add_object(emy_Orange, 1)
     pass
 
 
