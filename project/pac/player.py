@@ -24,22 +24,18 @@ class Player:
             if event.type == SDL_KEYDOWN:
                 if event.key == SDLK_RIGHT:
                     nowX += 1
-                    #nowY = 0
                     self.locate = 1
 
                 elif event.key == SDLK_LEFT:
                     nowX -= 1
-                    #nowY = 0
                     self.locate = 2
 
                 elif event.key == SDLK_UP:
                     nowY += 1
-                    #nowX = 0
                     self.locate = 3
 
                 elif event.key == SDLK_DOWN:
                     nowY -= 1
-                    #nowX = 0
                     self.locate = 4
 
             elif event.type == SDL_KEYUP:
@@ -66,7 +62,7 @@ class Player:
             self.image.clip_draw(self.frame * 58, 64, 58, 32, self.x, self.y)
 
         # 범위체크 ( 값 수정해줄것)
-        #if self.x < 190:
-            #self.x = 310
-       # if self.x > 310:
-        #    self.x = 290
+        if self.x < 118:
+            self.x = 529
+        if self.x > 530:
+            self.x = 119
