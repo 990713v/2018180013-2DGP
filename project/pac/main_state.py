@@ -9,6 +9,7 @@ import title_state
 
 from player import Player
 from game_map import Game_map
+from coin import Coin
 
 # 적
 from emy_Red import Emy_Red
@@ -30,11 +31,12 @@ emy_Orange = None
 
 
 def enter():
-    global player #, game_map
+    global player, coin #, game_map
     global emy_Red, emy_Blue, emy_Pink, emy_Orange
     
     player = Player()
     game_map = Game_map()
+    coin = Coin()
     
     emy_Red = Emy_Red()
     emy_Blue = Emy_Blue()
@@ -43,6 +45,7 @@ def enter():
 
     game_world.add_object(game_map, 0)
     game_world.add_object(player, 1)
+    game_world.add_object(coin, 1)
 
     game_world.add_object(emy_Red, 1)
     game_world.add_object(emy_Blue, 1)

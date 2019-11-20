@@ -62,7 +62,7 @@ class Player:
             self.image.clip_draw(self.frame * 58, 64, 58, 32, self.x, self.y)
 
         # 범위체크 ( 값 수정해줄것)
-        if self.x < 118:
+        if self.x < 115:
             self.x = 529
         if self.x > 530:
-            self.x = 119
+            self.x = 116
