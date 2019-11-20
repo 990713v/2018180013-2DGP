@@ -10,6 +10,10 @@ class Player:
         self.locate = 0
         self.image = load_image('pacman.png')
 
+    def get_bb(self):
+        return self.x - 15, self.y - 15, self.x + 15, self.y + 15
+
+
     def update(self):
         self.frame = (self.frame + 1) % 4
         self.x += nowX * 7
@@ -48,10 +52,11 @@ class Player:
                 elif event.key == SDLK_DOWN:
                     nowY += 1
 
-        #self.x += nowX * 5
-        #self.y += nowY * 5
 
     def draw(self):
+        ## 충돌체크 박스
+        draw_rectangle(*self.get_bb())
+        
         if self.locate <= 1: # 오른쪽
             self.image.clip_draw(self.frame * 58, 0, 58, 32, self.x, self.y)
         elif self.locate == 2: # 왼쪽
