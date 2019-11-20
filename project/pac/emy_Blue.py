@@ -3,7 +3,7 @@ import game_world
 
 class Emy_Blue:
     def __init__(self):
-        self.x, self.y = 191, 180
+        self.x, self.y = 355, 355
         self.frame = 4
         self.image = load_image('blue.png')
 

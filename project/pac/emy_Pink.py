@@ -4,7 +4,7 @@ import game_world
 
 class Emy_Pink:
     def __init__(self):
-        self.x, self.y = 210, 250
+        self.x, self.y = 325, 355
         self.frame = 4
         self.image = load_image('pink.png')
 
