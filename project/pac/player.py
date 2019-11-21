@@ -11,7 +11,7 @@ class Player:
         self.image = load_image('pacman.png')
 
     def get_bb(self):
-        return self.x - 15, self.y - 15, self.x + 15, self.y + 15
+        return self.x - 10, self.y - 10, self.x + 10, self.y + 10
 
 
     def update(self):

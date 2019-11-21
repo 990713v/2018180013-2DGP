@@ -9,8 +9,6 @@ class Coin:
     
     def __init__(self):
         self.image = load_image('small_coin.png')
-        #self.image2 = load_image('big_coin.png')
-
         self.x, self.y = random.randint(200, 400), random.randint(200, 400)
 
     def get_bb(self):
@@ -18,9 +16,23 @@ class Coin:
 
     def draw(self):
         self.image.draw(self.x, self.y)
-        draw_rectangle(*self.get_bb())
+        #draw_rectangle(*self.get_bb())
 
     def update(self):
         self.x = self.x
 
-    
+class BigCoin:
+    image = None
+
+    def __init__(self):
+        self.image = load_image('big_coin.png')
+        self.x, self.y = random.randint(400,600), random.randint(400,600)
+
+    def get_bb(self):
+        return self.x - 10, self.y - 10, self.x + 10, self.y + 10
+
+    def draw(self):
+        self.image.draw(self.x, self.y)
+
+    def update(self):
+        sefl.x = self.x

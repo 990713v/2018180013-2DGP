@@ -52,7 +52,7 @@ def enter():
     game_world.add_object(player, 1)
 
     global coins
-    coins = [Coin() for i in range(10)]
+    coins = [Coin() for i in range(10)], [BigCoin() for i in range(10)]
     game_world.add_objects(coins, 1)
     
     
