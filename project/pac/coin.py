@@ -35,4 +35,4 @@ class BigCoin:
         self.image.draw(self.x, self.y)
 
     def update(self):
-        sefl.x = self.x
+        self.x = self.x

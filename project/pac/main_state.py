@@ -9,7 +9,7 @@ import title_state
 
 from player import Player
 from game_map import Game_map
-from coin import Coin
+from coin import Coin, BigCoin
 
 from emy_Red import Emy_Red
 from emy_Blue import Emy_Blue
@@ -22,6 +22,7 @@ os.chdir('resourse')
 player = None
 game_map = None
 coins = []
+big_coins = []
 
 emy_Red = None
 emy_Blue = None
@@ -51,9 +52,12 @@ def enter():
     player = Player()
     game_world.add_object(player, 1)
 
-    global coins
-    coins = [Coin() for i in range(10)], [BigCoin() for i in range(10)]
+    global coins, big_coins
+    coins = [Coin() for i in range(10)]
+    big_coins = [BigCoin() for i in range(10)]
+    
     game_world.add_objects(coins, 1)
+    game_world.add_objects(big_coins, 1)
     
     
     global emy_Red, emy_Blue, emy_Pink, emy_Orange
@@ -85,6 +89,10 @@ def update():
     for coin in coins:
         if collide(player, coin):           
             game_world.remove_object(coin)
+
+    for big_coin in big_coins:
+        if collide(player, big_coin):
+            game_world.remove_object(big_coin)
 
 def draw():
     clear_canvas()
