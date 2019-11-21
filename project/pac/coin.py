@@ -1,18 +1,26 @@
 from pico2d import *
 import game_world
-##
+import game_framework
+import random
+
 
 class Coin:
+    image = None
+    
     def __init__(self):
         self.image = load_image('small_coin.png')
-        #self.image2 = load_image('big_coin.png')        
+        #self.image2 = load_image('big_coin.png')
 
-    def update(self):
-        pass
+        self.x, self.y = random.randint(200, 400), random.randint(200, 400)
 
+    def get_bb(self):
+        return self.x - 5, self.y - 5, self.x + 5, self.y + 5
 
     def draw(self):
-        for i in range(1, 10):
-            for j in range (1, 10):
-                self.image.draw(140 + 22*i, 140 + 22 * j)
-        #self.image2.draw(184, 174)
+        self.image.draw(self.x, self.y)
+        draw_rectangle(*self.get_bb())
+
+    def update(self):
+        self.x = self.x
+
+    
