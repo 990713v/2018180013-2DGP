@@ -29,6 +29,8 @@ emy_Blue = None
 emy_Pink = None
 emy_Orange = None
 
+#count = 20
+
 
 # 충돌체크
 def collide(a, b):
@@ -93,6 +95,7 @@ def update():
     for big_coin in big_coins:
         if collide(player, big_coin):
             game_world.remove_object(big_coin)
+        
 
 def draw():
     clear_canvas()

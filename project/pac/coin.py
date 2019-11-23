@@ -26,7 +26,7 @@ class BigCoin:
 
     def __init__(self):
         self.image = load_image('big_coin.png')
-        self.x, self.y = random.randint(400,600), random.randint(400,600)
+        self.x, self.y = random.randint(200,400), random.randint(400, 600)
 
     def get_bb(self):
         return self.x - 10, self.y - 10, self.x + 10, self.y + 10
