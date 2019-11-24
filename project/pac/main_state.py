@@ -9,6 +9,7 @@ import title_state
 
 from player import Player
 from game_map import Game_map
+from score import Score
 from coin import Coin, BigCoin
 
 from emy_Red import Emy_Red
@@ -21,6 +22,7 @@ os.chdir('resourse')
 
 player = None
 game_map = None
+score = None
 coins = []
 big_coins = []
 
@@ -29,7 +31,6 @@ emy_Blue = None
 emy_Pink = None
 emy_Orange = None
 
-#count = 20
 
 
 # 충돌체크
@@ -49,6 +50,10 @@ def enter():
     global game_map
     game_map = Game_map()
     game_world.add_object(game_map, 0)
+
+    global score
+    score = Score()
+    game_world.add_object(score, 1)
             
     global player
     player = Player()
