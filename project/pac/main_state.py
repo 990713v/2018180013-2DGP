@@ -94,12 +94,14 @@ def update():
         game_objects.update()
 
     for coin in coins:
-        if collide(player, coin):           
+        if collide(player, coin):
             game_world.remove_object(coin)
+            score.score += 10
 
     for big_coin in big_coins:
         if collide(player, big_coin):
             game_world.remove_object(big_coin)
+            score.score += 50
         
 
 def draw():
