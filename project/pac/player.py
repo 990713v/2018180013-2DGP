@@ -55,7 +55,7 @@ class Player:
 
     def draw(self):
         ## 충돌체크 박스
-        draw_rectangle(*self.get_bb())
+        #draw_rectangle(*self.get_bb())
         
         if self.locate <= 1: # 오른쪽
             self.image.clip_draw(self.frame * 58, 0, 58, 32, self.x, self.y)
